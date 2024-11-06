@@ -1,1 +1,11 @@
-<p>informacion works!</p>
+<h1>AKI VAN LOS POKEMONES</h1>
+
+    <div class="box-pokemon" *ngIf="pokemon.length > 0">
+        <div *ngFor="let pokemones of pokemon">
+        
+        <h2><span>{{pokemones.nombre}}</span></h2> 
+        <img src={{pokemones.image_url}}>    
+        <p><span>{{pokemones.descripcion}}</span></p>    
+        </div>
+    </div>
+

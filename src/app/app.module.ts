@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { FormularioComponent } from './formulario/formulario.component';
 import { InformacionComponent } from './informacion/informacion.component';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,9 @@ import { InformacionComponent } from './informacion/informacion.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

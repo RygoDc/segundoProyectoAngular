@@ -40,6 +40,10 @@ form{
                     color: yellow;
                     background-color: black;
                 }
+
+                &[disabled]{
+                    opacity: 0.4;
+                }
             }
         }
     }

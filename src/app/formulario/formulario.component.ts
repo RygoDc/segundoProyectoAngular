@@ -13,7 +13,11 @@ export class FormularioComponent {
     private formBuilder: FormBuilder
   ){
     this.formulario = this.formBuilder.group({
-      name:["",[Validators.required, Validators.minLength(2)]]
+      name:["",[Validators.required, Validators.minLength(2)]], category: ["", [Validators.required]]
     })
+  }
+
+  enviar(){
+    alert("Formulario enviado");
   }
 }
