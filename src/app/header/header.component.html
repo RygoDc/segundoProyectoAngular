@@ -1,0 +1,16 @@
+<header>
+    <div class="logo">
+        <span>Logo Aquí</span>
+    </div>
+    <nav *ngIf="toggleNav">
+        <a href="">Home</a>
+        <a href="">Contacto</a>
+        <a href="">Formulario</a>
+
+        <button type="button" (click)="toggleMenu()">X</button>
+        
+    </nav>
+    <div class = "showNav">
+        <button type="button" (click)="toggleMenu()">Mostrar</button>
+    </div>
+</header>

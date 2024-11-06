@@ -1,0 +1,64 @@
+header{
+    padding: 12px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: black;
+    color: white;
+
+
+    a{
+        color: white;
+    }
+
+    .logo{
+        span{
+            background-color: white;
+            border-radius: 10px;
+            color:black;
+            padding: 7px 20px;
+        }
+    }
+
+    nav{
+        width: 55%;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        background-color: #242424;
+
+        a{
+            display: block;
+            width: 85%;
+            margin: 0 auto;
+            text-decoration: none;
+            &:first-of-type{
+                margin-top: 80px;
+            }
+
+            &:not(:last-of-type){
+                margin-bottom: 20px;
+            }
+            &::before{
+                content: "- ";
+            }
+        }
+
+        button{
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            
+        }
+    }
+
+    .showNav{
+        text-align: right;
+        button{
+            margin-right: 10px;
+            background-color: transparent;
+            border: none;
+            color: white;
+        }
+    }
+}
