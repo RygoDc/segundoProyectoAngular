@@ -10,7 +10,12 @@
 
         img{
             width: 50%;
+            &:hover, &:focus{
+                transform: scale(6.1);
+                transition: 1s;
+            }
         }
+        
     }
     
     

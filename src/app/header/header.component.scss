@@ -4,6 +4,8 @@ header{
     grid-template-columns: 1fr 1fr;
     background-color: black;
     color: white;
+    z-index: 999;
+    position: relative;
 
 
     a{
