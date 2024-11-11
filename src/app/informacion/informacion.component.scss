@@ -1,21 +1,31 @@
 .box-pokemon{
+    width: 95%;
     display: grid;
     justify-content: center;
     align-items: center;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin: 20px;
+    grid-template-columns:repeat(2, 1fr);
+    grid-gap: 20px 25px;
+    margin: 0 auto 20px;
 
     div{
-        width: 100%;
-        padding: 20px 0;
+        border-radius: 10px;
+        box-shadow: 0 2px 3px #262626;
+        position: relative;
+        padding: 10px 15px;
 
         img{
-            width: 100%;
+            border-radius: 10px;
+            width: 80%;
+            display: block;
+            margin: 0 auto 10px;
             &:hover, &:focus{
                 transform: scale(6.1);
                 transition: 1s;
             }
+        }
+        button{
+            display: block;
+            margin: 0 auto;
         }
         
     }

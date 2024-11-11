@@ -1,11 +1,13 @@
 <marquee behavior="scroll" direction="left">AQUI VAN LOS POKEMONES, TIENES QUE ATRAPARLOS!</marquee>
 <marquee behavior="scroll" direction="right">PONTE SOBRE UN POKEMON PARA QUE VEAS COMO TE ATACA</marquee>
     <div class="box-pokemon" *ngIf="pokemon.length > 0">
-        <div *ngFor="let pokemones of pokemon">
-        
-        <h2><span>{{pokemones.nombre}}</span></h2> 
-        <img src={{pokemones.image_url}}>    
+        <div class= "" *ngFor="let pokemones of pokemon">
+        <img src={{pokemones.image_url}} alt={{pokemones.nombre}}> 
+        <h2><span>{{pokemones.nombre}}</span></h2>           
         <p><span>{{pokemones.descripcion}}</span></p>    
-        </div>
+        <button type="button" > Ver información</button>
     </div>
+</div>
+
+<app-modal></app-modal>
 

@@ -16,4 +16,6 @@ export class InformacionComponent {
     {id:5,nombre:"PIKACHU", descripcion:"PIKA PIKA",image_url:"https://www.laguiadelvaron.com/wp-content/uploads/2017/02/artstation.com-joshua-dunlop-pikachu-watermarked-compressed-1-1-730x570.jpg"},
     {id:6,nombre:"BULBASAUR", descripcion:"BULBASOOOR",image_url:"https://www.laguiadelvaron.com/wp-content/uploads/2017/02/artstation.com-joshua-dunlop-bulbasaur-watermarked-730x550.jpg"},
   ]
+
+  
 }

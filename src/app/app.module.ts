@@ -10,6 +10,7 @@ import { FormularioComponent } from './formulario/formulario.component';
 import { InformacionComponent } from './informacion/informacion.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ModalComponent } from './modal/modal.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +18,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FooterComponent,
     HomeComponent,
     FormularioComponent,
-    InformacionComponent
+    InformacionComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
