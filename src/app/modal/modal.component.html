@@ -1,9 +1,9 @@
 <div class="modal">
     <div class="content-modal">
         <button class="close" type="button" (click)="cerrarModal()">X</button>
-        <h2>Nombre de pokemon</h2>
-        <img src="" alt="">
-        <p>Descripcion</p>
+        <h2>{{pokemon?.nombre}}</h2>
+        <img src={{pokemon?.image_url}} alt={{pokemon?.nombre}}>
+        <p>{{pokemon?.descripcion}}</p>
 
         <button class="button-close" type="button" (click)="cerrarModal()">Cerrar</button>
     </div>

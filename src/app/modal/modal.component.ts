@@ -16,7 +16,7 @@ export class ModalComponent implements OnInit{
     descripcion: "",
     image_url: ""
   }
-  
+
   constructor(
     private informacionService: InformacionService,
     private enviarPokeminService: EnviarPokemonService
@@ -29,6 +29,7 @@ export class ModalComponent implements OnInit{
   }    
 
   cerrarModal(){
+    this.enviarPokeminService.updatePokemon(null);
     this.informacionService.toggleModal(false);
   }
 }

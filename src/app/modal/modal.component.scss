@@ -37,6 +37,11 @@
             width: 80%;
             display: block;
             margin: 0 auto 10px;
+            &:hover, &:focus{
+                transform: scale(3.1);
+                transition: 1s;
+            }
+
         }
         
         button.button-close{
