@@ -1,15 +1,17 @@
 .box-pokemon{
     display: grid;
+    justify-content: center;
+    align-items: center;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
     margin: 20px;
 
     div{
-        
+        width: 100%;
         padding: 20px 0;
 
         img{
-            width: 50%;
+            width: 100%;
             &:hover, &:focus{
                 transform: scale(6.1);
                 transition: 1s;
