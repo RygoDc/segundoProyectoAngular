@@ -5,9 +5,9 @@
         <img src={{pokemones.image_url}} alt={{pokemones.nombre}}> 
         <h2><span>{{pokemones.nombre}}</span></h2>           
         <p><span>{{pokemones.descripcion}}</span></p>    
-        <button type="button" > Ver información</button>
+        <button type="button" (click)="abrirModal()" > Ver información</button>
     </div>
 </div>
 
-<app-modal></app-modal>
+<app-modal *ngIf="mostrarModal"></app-modal>
 

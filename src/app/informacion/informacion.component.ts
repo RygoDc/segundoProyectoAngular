@@ -1,12 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Pokemon } from '../services/interfaces/pokemon';
+import { InformacionService } from '../services/modales/informacion.service';
 
 @Component({
   selector: 'app-informacion',
   templateUrl: './informacion.component.html',
   styleUrl: './informacion.component.scss'
 })
-export class InformacionComponent {
+export class InformacionComponent implements OnInit {
+
+  mostrarModal: boolean = false;
+
+  constructor(
+    private informacionService: InformacionService
+  ) { }
+
+  ngOnInit(): void {
+   this.informacionService.modal$.subscribe(modal =>{
+    this.mostrarModal = modal;
+   }); 
+  }
+
+  abrirModal(){
+    this.informacionService.toggleModal(true);
+  }
 
   pokemon: Pokemon[]= [
     {id:1,nombre:"RAICHU", descripcion:"RRRAAAIII RAIII",image_url:"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F0f%2Fd4%2Fe2%2F0fd4e2a1531ca011d9dba5291815a87d.jpg&f=1&nofb=1&ipt=eada204025fba1411ec63eeec06c6352cc7ce4650fae8a8506a351b4d85c6c27&ipo=images"},
@@ -17,5 +34,6 @@ export class InformacionComponent {
     {id:6,nombre:"BULBASAUR", descripcion:"BULBASOOOR",image_url:"https://www.laguiadelvaron.com/wp-content/uploads/2017/02/artstation.com-joshua-dunlop-bulbasaur-watermarked-730x550.jpg"},
   ]
 
+  
   
 }
