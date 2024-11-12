@@ -9,5 +9,15 @@
     </div>
 </div>
 
+<div class="box-pokemon" *ngIf="pokemonsApi.length > 0">
+    <div class= "" *ngFor="let pokemones of pokemonsApi">
+        <!--<img src={{pokemones.image_url}} alt={{pokemones.nombre}}> -->
+        <h2><span>{{pokemones.name}}</span></h2>           
+        <!--<p><span>{{pokemones.descripcion}}</span></p>    -->
+        <button type="button" (click)="detallesPokemon(pokemones.name)" > Ver información</button>
+    </div>
+</div>
+
+
 <app-modal *ngIf="mostrarModal"></app-modal>
 

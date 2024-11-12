@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Pokemon } from '../services/interfaces/pokemon';
+import { Pokemon, PokemonApi } from '../services/interfaces/pokemon';
 import { InformacionService } from '../services/modales/informacion.service';
 import { EnviarPokemonService } from '../services/pokemon/enviar-pokemon.service';
+import { PokemonApiService } from '../services/pokemon/pokemon-api.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-informacion',
   templateUrl: './informacion.component.html',
@@ -10,22 +12,44 @@ import { EnviarPokemonService } from '../services/pokemon/enviar-pokemon.service
 export class InformacionComponent implements OnInit {
 
   mostrarModal: boolean = false;
+  pokemonsApi: PokemonApi[] = [];
 
   constructor(
     private informacionService: InformacionService,
-    private enviarPokemonService: EnviarPokemonService
+    private enviarPokemonService: EnviarPokemonService,
+    private pokemonApiService: PokemonApiService,
+    private router : Router
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
    this.informacionService.modal$.subscribe(modal =>{
     this.mostrarModal = modal;
    }); 
+   this.pokemonApiService.getAllPokemon().subscribe({
+    //obligatorio next y error
+    //opcional complete
+    next: datos => {//sila comunicacion y la respuesta es exitosa
+      //console.log(datos.results);
+      this.pokemonsApi = datos.results;
+      console.log(this.pokemonsApi);
+    },
+    error: err => {//si hay un error en la comunicacion 
+      console.log(err)
+    },
+    complete: () => {
+      console.log("comunicacion finalizada")
+    }
+      
+    
+   });
   }
 
   abrirModal(pk:Pokemon){
     this.enviarPokemonService.updatePokemon(pk);
     this.informacionService.toggleModal(true);
   }
+
+  
 
   pokemon: Pokemon[]= [
     {id:1,nombre:"RAICHU", descripcion:"RRRAAAIII RAIII",image_url:"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F0f%2Fd4%2Fe2%2F0fd4e2a1531ca011d9dba5291815a87d.jpg&f=1&nofb=1&ipt=eada204025fba1411ec63eeec06c6352cc7ce4650fae8a8506a351b4d85c6c27&ipo=images"},
@@ -36,6 +60,13 @@ export class InformacionComponent implements OnInit {
     {id:6,nombre:"BULBASAUR", descripcion:"BULBASOOOR",image_url:"https://www.laguiadelvaron.com/wp-content/uploads/2017/02/artstation.com-joshua-dunlop-bulbasaur-watermarked-730x550.jpg"},
   ]
 
-  
+  detallesPokemon(nombre: string){
+    //debemos enviar el nombre del pokemon a traves de BehaviourSubject al componen pokemon-detalle
+   
+
+        
+
+    this.router.navigate(['detalles']);
+  }
   
 }
