@@ -26,7 +26,7 @@ export class InformacionComponent implements OnInit {
   ngOnInit() {
    this.informacionService.modal$.subscribe(modal =>{
     this.mostrarModal = modal;
-   }); 
+   });
    this.pokemonApiService.getAllPokemon().subscribe({
     //obligatorio next y error
     //opcional complete
@@ -35,14 +35,14 @@ export class InformacionComponent implements OnInit {
       this.pokemonsApi = datos.results;
       console.log(this.pokemonsApi);
     },
-    error: err => {//si hay un error en la comunicacion 
+    error: err => {//si hay un error en la comunicacion
       console.log(err)
     },
     complete: () => {
       console.log("comunicacion finalizada")
     }
-      
-    
+
+
    });
   }
 
@@ -51,7 +51,7 @@ export class InformacionComponent implements OnInit {
     this.informacionService.toggleModal(true);
   }
 
-  
+
 
   pokemon: Pokemon[]= [
     {id:1,nombre:"RAICHU", descripcion:"RRRAAAIII RAIII",image_url:"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F0f%2Fd4%2Fe2%2F0fd4e2a1531ca011d9dba5291815a87d.jpg&f=1&nofb=1&ipt=eada204025fba1411ec63eeec06c6352cc7ce4650fae8a8506a351b4d85c6c27&ipo=images"},
@@ -64,9 +64,9 @@ export class InformacionComponent implements OnInit {
 
   detallesPokemon(nombre: string){
     //debemos enviar el nombre del pokemon a traves de BehaviourSubject al componen pokemon-detalle
-    this.pokemonDetailService.obtenerDetalle(nombre);        
+    this.pokemonDetailService.setItem(nombre);
 
     this.router.navigate(['detalles']);
   }
-  
+
 }

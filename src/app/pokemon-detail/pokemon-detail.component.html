@@ -1,4 +1,11 @@
-<div>
+<div >
+<h2>{{pokemonName}}</h2>
 
-<p>{{pokemonName}}</p>
+  <img src="{{this.pokemon?.imagen}}" alt="{{pokemonName}}">
+  <p *ngFor="let ability of pokemon?.abilities">
+    Habilidad: {{ability.name}} <br>
+    URL: {{ability.url}}
+
+  </p>
+
 </div>

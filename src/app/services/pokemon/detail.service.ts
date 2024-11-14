@@ -6,7 +6,7 @@ import {Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class DetailService {
-  url: string = "https://pokeapi.co/api/v2/pokemon";
+  url: string = "https://pokeapi.co/api/v2/pokemon/";
 
   constructor(
     private http: HttpClient
