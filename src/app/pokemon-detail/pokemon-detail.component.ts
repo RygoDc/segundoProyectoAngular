@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonDetailService } from '../services/pokemon/pokemon-detail.service';
+import {DetailService} from '../services/pokemon/detail.service';
 
 @Component({
   selector: 'app-pokemon-detail',
@@ -10,10 +11,22 @@ export class PokemonDetailComponent implements OnInit {
   pokemonName: string = '';
 
   constructor(
-    private pokemonDetailService:PokemonDetailService
+    private pokemonDetailService:PokemonDetailService,
+    private detailService: DetailService
   ) { }
 
-  ngOnInit(){ 
-    this.pokemonDetailService.detail$.subscribe(name => this.pokemonName = name);
+  ngOnInit(){
+    this.pokemonDetailService.detalles$.subscribe(detalles =>{
+      this.pokemonName = detalles;
+    })
+    this.detailService.getPokemon(this.pokemonName).subscribe({
+      next: datos => {
+        console.log(datos);
+      },
+      error: err => {
+        console.log(err);
+      }
+    })
   }
+
 }
